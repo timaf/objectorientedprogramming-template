@@ -32,9 +32,25 @@ public class MovieParser {
             Movie movieReview = new Movie();
             movieReview.setTitle(columns[20]);
             movieReview.setVote_avarage(Double.parseDouble(columns[22]));
-            //movieReview.setGeners(columns[3]));
-            return  movieReview;
+            movieReview.setGeners(toGeners(columns[3]));
+            return movieReview;
         };
     }
 
+    private List<String> toGeners(String column) {
+        String objects = column.replaceAll("\\[", "").replaceAll("]", "");
+        objects = objects.replaceAll("\\{", "").replaceAll("}", "");
+        objects = objects.replaceAll("'", "");
+
+        String[] words = objects.split(", ");
+        return Stream.of(words)
+                .map(word -> word.split(": "))
+                .filter(word -> word[0].equals("name"))
+                .map(word -> word[1])
+                .collect(Collectors.toList());
+    }
+
+
 }
+
+

@@ -7,6 +7,10 @@ public class SummaryDisplayer {
         summary.getTopRatedMovies()
                 .forEach(System.out::println);
         System.out.println(" ------ ");
+
+        summary.getTopAppearingGenres()
+                .forEach(System.out::println);
+        System.out.println(" ------ ");
     }
     public void display(){
         System.out.println(" ------ ");

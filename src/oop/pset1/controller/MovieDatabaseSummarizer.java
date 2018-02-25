@@ -4,6 +4,7 @@ import oop.pset1.model.Movie;
 import oop.pset1.model.Summary;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MovieDatabaseSummarizer {
@@ -14,10 +15,20 @@ public class MovieDatabaseSummarizer {
                 .map(e -> e.getTitle() + " (" + e.getVote_avarage() + ")")
                 .collect(Collectors.toList());
 
+        Map <String, Long> allAppearingGenres = movieReview.stream()
+                .map(moviegeners -> moviegeners.getGeners())
+                .flatMap(geners -> geners.stream())
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+
+        List<String> topAppearingGenres = allAppearingGenres.entrySet().stream()
+                .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
+                .limit(2)
+                .map(e -> e.getKey() + " (" + e.getValue() + ")")
+                .collect(Collectors.toList());
+
         Summary summary = new Summary();
         summary.setTopRatedMovies(topRatedMovies);
-
-
+        summary.setTopAppearingGenres(topAppearingGenres);
         return summary;
 
     }

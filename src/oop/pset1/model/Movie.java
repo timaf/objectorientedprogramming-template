@@ -24,13 +24,15 @@ public class Movie {
     public void setVote_avarage(Double vote_avarage) {
         this.vote_avarage = vote_avarage;
     }
-    /*public List <String> getGeners() {
+
+
+    public List <String> getGeners() {
         return geners;
     }
 
-    public void  setGeners(List<String> geners) {
+     public void setGeners(List<String> geners) {
         this.geners = geners;
-    }*/
+    }
 
 }
 
