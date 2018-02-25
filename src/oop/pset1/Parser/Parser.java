@@ -26,4 +26,19 @@ public  abstract class Parser {
 
     protected abstract Function<String[], Object> toObjects();
 
+
+    protected List<String> toGetFields(String column, String theField) {
+        String objects = column.replaceAll("\\[", "").replaceAll("]", "");
+        objects = objects.replaceAll("\\{", "").replaceAll("}", "");
+        objects = objects.replaceAll("'", "");
+
+        String[] words = objects.split(", ");
+        return Stream.of(words)
+                .map(word -> word.split(": "))
+                .filter(word -> word[0].equals(theField))
+                .map(word -> word[1])
+                .collect(Collectors.toList());
+
+    }
+
 }
