@@ -11,16 +11,14 @@ import java.util.stream.Collectors;
 
 public class ActorsDatabaseSummarizer {
      public ActorSummary  summarize(List<Actor> actorReview){
-           Map <String, Long> allAppearingActors= actorReview.stream()
-                  .map(Actor::getName)
-                 //  .flatMap(names -> names.stream())
-                  .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-
-          List<String> topHeirdActors = allAppearingActors.entrySet().stream()
-                    .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
-                    .limit(5)
-                    .map(e -> e.getKey() + " (" + e.getValue() + ")")
-                    .collect(Collectors.toList());
+         List<String> topHeirdActors = actorReview.stream()
+               .map(Actor::getName)
+               .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+               .entrySet().stream()
+               .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
+               .limit(5)
+               .map(e -> e.getKey() + " (" + e.getValue() + ")")
+               .collect(Collectors.toList());
 
 
          Map<String, Long> allActorsGender= actorReview.stream()
