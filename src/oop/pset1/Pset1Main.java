@@ -1,7 +1,11 @@
 package oop.pset1;
 
+import oop.pset1.Parser.ActorParser;
 import oop.pset1.Parser.MovieParser;
+import oop.pset1.controller.ActorsDatabaseSummarizer;
 import oop.pset1.controller.MovieDatabaseSummarizer;
+import oop.pset1.model.Actor;
+import oop.pset1.model.ActorSummary;
 import oop.pset1.model.Movie;
 import oop.pset1.model.Summary;
 import oop.pset1.view.SummaryDisplayer;
@@ -12,6 +16,7 @@ import java.util.Optional;
 public class Pset1Main {
 
     private static Summary summary;
+    private static ActorSummary theSummary;
 
     public static void main(String[] args) {
         MovieParser parser = new  MovieParser();
@@ -25,6 +30,19 @@ public class Pset1Main {
             displayer.display(summary.get());
         } else {
             displayer.display();
+        }
+
+        ActorParser theParser = new ActorParser();
+        List<Actor> actores = theParser.getActors();
+
+        ActorsDatabaseSummarizer theSummarizer = new ActorsDatabaseSummarizer();
+        SummaryDisplayer theDisplayer = new SummaryDisplayer();
+
+        Optional<ActorSummary> theSummary = Optional.ofNullable(theSummarizer.summarize(actores));
+        if(theSummary.isPresent()){
+            theDisplayer.display(theSummary.get());
+        } else {
+            theDisplayer.display();
         }
     }
 }
