@@ -15,12 +15,11 @@ public class MovieDatabaseSummarizer {
                 .map(e -> e.getTitle() + " (" + e.getVote_avarage() + ")")
                 .collect(Collectors.toList());
 
-        Map <String, Long> allAppearingGenres = movieReview.stream()
+        List<String> topAppearingGenres = movieReview.stream()
                 .map(moviegeners -> moviegeners.getGeners())
                 .flatMap(geners -> geners.stream())
-                .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-
-        List<String> topAppearingGenres = allAppearingGenres.entrySet().stream()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+                .entrySet().stream()
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
                 .limit(2)
                 .map(e -> e.getKey() + " (" + e.getValue() + ")")

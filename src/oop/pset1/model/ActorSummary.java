@@ -5,13 +5,13 @@ import java.util.List;
 
 public class ActorSummary {
     private List<String> topHeirdActors;
-    private List <String> genderRatio;
+    private Long[] genderRatio;
 
     public List <String> getTopHeirdActors() {
         return topHeirdActors;
     }
 
-    public List <String> getGenderRatio() {
+    public Long[] getGenderRatio() {
         return genderRatio;
     }
 
@@ -19,7 +19,7 @@ public class ActorSummary {
         this.topHeirdActors = topHeirdActors;
     }
 
-    public void setGenderRatio(List <String> genderRatio) {
+    public void setGenderRatio(Long[] genderRatio) {
         this.genderRatio = genderRatio;
     }
 }
