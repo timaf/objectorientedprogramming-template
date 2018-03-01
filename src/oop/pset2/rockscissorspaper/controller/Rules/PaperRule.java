@@ -16,6 +16,7 @@ public class PaperRule implements Rules {
             case "Scissors":
                 System.out.println("Human  wines");
                 break;
+
         }
     }
 }

@@ -6,6 +6,7 @@ public class RockRule implements Rules {
 
         @Override
         public void judge(Move humanMove) {
+
             String result = humanMove.say();
             switch (result){
                 case "Rock":

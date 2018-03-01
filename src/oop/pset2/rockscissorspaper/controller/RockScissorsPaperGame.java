@@ -24,6 +24,10 @@ public class RockScissorsPaperGame {
         System.out.println("Computer: I have chosen, your turn " );
         HumanPlayer humanPlayer = new HumanPlayer();
         Move humanMove = humanPlayer.start();
+        if(humanMove == null){
+            System.out.println("Wrong spelling");
+            System.exit(0);
+        }
         System.out.println("Computer: I have chosen : " + computerMove.say().toUpperCase());
         System.out.println("*********");
 
