@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class ActorsDatabaseSummarizer {
      public ActorSummary  summarize(List<CastActor> castReview){
-         List<String> topHeirdActors = castReview.stream()
+         List<String> topHiredActors = castReview.stream()
                .map(cast -> cast.getName())
                .flatMap(castName -> castName.stream())
                .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
@@ -33,7 +33,7 @@ public class ActorsDatabaseSummarizer {
 
 
          ActorSummary theSummary = new ActorSummary();
-         theSummary.setTopHeirdActors(topHeirdActors);
+         theSummary.setTopHeirdActors(topHiredActors);
          theSummary.setGenderRatio(genderRatio);
          return theSummary;
 
