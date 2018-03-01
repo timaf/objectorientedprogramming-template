@@ -1,8 +1,8 @@
 package oop.pset2.rockscissorspaper.controller;
 
-import oop.pset2.rockscissorspaper.controller.Rules.PaperRule;
-import oop.pset2.rockscissorspaper.controller.Rules.RockRule;
-import oop.pset2.rockscissorspaper.controller.Rules.ScissorRule;
+import oop.pset2.rockscissorspaper.view.PaperRule;
+import oop.pset2.rockscissorspaper.view.RockRule;
+import oop.pset2.rockscissorspaper.view.ScissorRule;
 import oop.pset2.rockscissorspaper.controller.players.ComputerPlayer;
 import oop.pset2.rockscissorspaper.controller.players.HumanPlayer;
 import oop.pset2.rockscissorspaper.model.Move;

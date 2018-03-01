@@ -1,6 +1,7 @@
-package oop.pset2.rockscissorspaper.controller.Rules;
+package oop.pset2.rockscissorspaper.view;
 
 import oop.pset2.rockscissorspaper.model.Move;
+import oop.pset2.rockscissorspaper.view.Rules;
 
 public class ScissorRule implements Rules {
     @Override
