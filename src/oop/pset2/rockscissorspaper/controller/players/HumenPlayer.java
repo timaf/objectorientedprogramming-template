@@ -1,16 +1,15 @@
 package oop.pset2.rockscissorspaper.controller.players;
 
-public class HumenPlayer implements Player {
+public class HumenPlayer extends Player {
 
     @Override
-    public void play() {
-        System.out.println("HumenPlayer: I want to play ");
-
+    public void start() {
         try {
-            Thread.sleep(2 * 1000);
+            Thread.sleep(1 * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("HumenPlayer: let's start ");
+        System.out.println("Humen: I want to play too ");
+
     }
 }

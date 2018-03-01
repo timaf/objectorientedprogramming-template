@@ -3,7 +3,6 @@ package oop.pset1.controller;
 import oop.pset1.model.Movie;
 import oop.pset1.model.Summary;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class MovieDatabaseSummarizer {

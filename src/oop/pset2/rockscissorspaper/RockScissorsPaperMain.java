@@ -6,6 +6,6 @@ import oop.pset2.rockscissorspaper.controller.RockScissorsPaperGame;
 public class RockScissorsPaperMain {
 
     public static void main(String[] args) {
-       // new RockScissorsPaperGame().play();
+        new RockScissorsPaperGame().play();
     }
 }
