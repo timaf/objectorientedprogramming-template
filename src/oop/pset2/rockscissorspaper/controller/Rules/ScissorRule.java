@@ -4,8 +4,8 @@ import oop.pset2.rockscissorspaper.model.Move;
 
 public class ScissorRule implements Rules {
     @Override
-    public void judge(Move humenMove) {
-        String result = humenMove.say();
+    public void judge(Move humanMove) {
+        String result = humanMove.say();
         switch (result){
             case "Scissors":
                 System.out.println("No winner!");
@@ -14,7 +14,7 @@ public class ScissorRule implements Rules {
                 System.out.println("Computer wines");
                 break;
             case "Paper":
-                System.out.println("Humen  wines");
+                System.out.println("Human  wines");
                 break;
         }
     }

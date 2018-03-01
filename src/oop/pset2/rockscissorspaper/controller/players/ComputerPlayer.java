@@ -1,16 +1,24 @@
 package oop.pset2.rockscissorspaper.controller.players;
 
-public class ComputerPlayer extends Player {
+import oop.pset2.rockscissorspaper.model.*;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class ComputerPlayer implements Player {
 
     @Override
-    public void start() {
+    public Move start() {
         System.out.println("Computer: I want to play ");
-
-        try {
-            Thread.sleep(1 * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Computer: let's start ");
+        List <Move> moves = Stream.of(
+                new PaperMove(),
+                new RockMove(),
+                new ScissorsMove())
+                .collect(Collectors.toList());
+        Collections.shuffle(moves);
+        return moves.get(0);
     }
 }
