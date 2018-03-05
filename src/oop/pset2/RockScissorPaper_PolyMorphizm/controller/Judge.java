@@ -19,7 +19,7 @@ public class Judge {
         if(move2.wins(move1)){
             return "Player 2 wins";
         }
-        return "Noone wins";
+        return "No one wins";
     }
 
 }
