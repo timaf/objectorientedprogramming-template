@@ -1,14 +1,11 @@
 package oop.pset2.RockScissorPaper_PolyMorphizm.players;
 
-import oop.pset2.RockScissorPaper_PolyMorphizm.model.GroupOfMoves;
 import oop.pset2.RockScissorPaper_PolyMorphizm.model.Move;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
-
 
 public class ComputerPlayer implements Player {
 

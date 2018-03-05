@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import oop.pset3.model.*;
+import oop.pset3.lizardSpockGame.model.*;
 
 
 public class GroupOfMoves {
