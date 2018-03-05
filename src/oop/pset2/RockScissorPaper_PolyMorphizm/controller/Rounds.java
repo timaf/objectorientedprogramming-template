@@ -1,14 +1,17 @@
-package oop.pset2.RockScissorPaper_PolyMorphizm.model;
+package oop.pset2.RockScissorPaper_PolyMorphizm.controller;
 
-import oop.pset2.RockScissorPaper_PolyMorphizm.TheRockScissorsPaperGame;
+import oop.pset2.RockScissorPaper_PolyMorphizm.model.Move;
+
 import java.util.Scanner;
+import java.util.Set;
 
 public class Rounds {
 
-    public void playAgain() {
+    public void playAgain(Set <Move> moves) {
+
         String answer;
         do{
-            new TheRockScissorsPaperGame().play();
+            new TheRockScissorsPaperGame().play(moves);
             System.out.print("Do you want to play?? ");
             Scanner scanner = new Scanner(System.in);
             answer = scanner.next();

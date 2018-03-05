@@ -6,6 +6,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import oop.pset3.model.*;
+
+
 public class GroupOfMoves {
 
     private static Set<Move> moves = Stream.of(
@@ -14,10 +17,19 @@ public class GroupOfMoves {
             new ScissorsMove()
     ).collect(Collectors.toSet());
 
+    private  static Set<Move> newMoves = Stream.of(
+            new PaperMove(),
+            new RockMove(),
+            new ScissorsMove(),
+            new LizardMove(),
+            new SpockMove()
+    ) .collect(Collectors.toSet());
+
     public GroupOfMoves(){
     }
 
     public static Set<Move> getMoves()  {
         return new HashSet <Move>(moves);
     }
+    public static Set<Move> getNewMoves(){ return new HashSet <Move>(newMoves); }
 }

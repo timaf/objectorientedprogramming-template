@@ -6,17 +6,18 @@ import oop.pset2.RockScissorPaper_PolyMorphizm.model.Move;
 
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.Set;
 
 import static java.util.stream.Collectors.joining;
 
 public class HumanPlayer implements Player {
 
     @Override
-    public Move makeAmove(GroupOfMoves moves) {
+    public Move makeAmove(Set <Move> moves) {
         Optional <Move> move = Optional.empty();
         while (!move.isPresent()) {
             System.out.println("Player1: I have chosen, your turn . ");
-            System.out.println("Player1: You have the following moves: ");
+            System.out.println("You have the following moves: ");
             show(moves);
             System.out.println("-----  ----  --------");
             System.out.println("Please pick your move: ");
@@ -27,15 +28,15 @@ public class HumanPlayer implements Player {
         return move.get();
     }
 
-    private void show(GroupOfMoves moves) {
-        String movesList = moves.getMoves().stream()
+    private void show(Set <Move> moves) {
+        String movesList = moves.stream()
                 .map(move -> move.sayWhichMove())
                 .collect(joining(", "));
         System.out.println(movesList);
     }
 
-    private Optional<Move> toMove(String humanMove, GroupOfMoves moves) {
-        return moves.getMoves().stream()
+    private Optional <Move> toMove(String humanMove, Set <Move> moves) {
+        return moves.stream()
                 .filter(move -> move.sayWhichMove().equalsIgnoreCase(humanMove))
                 .findFirst();
     }
