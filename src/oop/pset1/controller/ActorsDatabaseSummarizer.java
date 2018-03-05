@@ -33,7 +33,7 @@ public class ActorsDatabaseSummarizer {
 
 
          ActorSummary theSummary = new ActorSummary();
-         theSummary.setTopHeirdActors(topHiredActors);
+         theSummary.setTopHiredActors(topHiredActors);
          theSummary.setGenderRatio(genderRatio);
          return theSummary;
 

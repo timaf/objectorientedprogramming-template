@@ -12,10 +12,10 @@ public class RockMove implements Move {
 
     @Override
     public Move judge(Move move) {
-        if (move.getClass() == PaperMove.class) {
-            return move;
-        } else if (move.getClass() == ScissorsMove.class) {
+        if (move.getClass() == ScissorsMove.class) {
             return RockMove.this;
+        }else if (move.getClass() == PaperMove.class) {
+            return move;
         } else {
             return null;
         }

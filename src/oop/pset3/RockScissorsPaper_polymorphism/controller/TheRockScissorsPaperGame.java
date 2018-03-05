@@ -17,7 +17,7 @@ public class TheRockScissorsPaperGame {
     Display display = new Display();
 
     public void play(){
-        System.out.println("Play with me please. ");
+        System.out.println("Computer: Play with me please. ");
         Move computerMove = computerPlayer.makeAmove(movesList);
         Move humanMove = humanPlayer.makeAmove(movesList);
         if(humanMove == null) {
@@ -27,8 +27,8 @@ public class TheRockScissorsPaperGame {
         Move verdict = humanMove.judge(computerMove);
         String winner = result.whoWines(verdict, humanMove, computerMove);
         System.out.println("Computer: I have chosen : " + computerMove.sayWhichMove().toUpperCase());
-        System.out.println("*********");
         display.display(winner);
+        System.out.println("*********");
 
     }
 }

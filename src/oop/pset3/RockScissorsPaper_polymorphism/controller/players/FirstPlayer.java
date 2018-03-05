@@ -12,8 +12,9 @@ public class FirstPlayer implements Player {
     @Override
     public Move makeAmove(GroupOfMoves moves){
         System.out.println("Computer: I have chosen, your turn . ");
-        System.out.println(" You have the following moves: ");
+        System.out.println("Coputer: You have the following moves: ");
         show(moves);
+        System.out.println("-----  ----  --------");
         System.out.println("Please pick your move: ");
         Scanner scanner = new Scanner(System.in);
         String humanMove = scanner.nextLine();

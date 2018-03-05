@@ -17,7 +17,7 @@ public class SummaryDisplayer {
 
     public void display(ActorSummary theSummary) {
         System.out.println("Most hired actors:");
-        theSummary.getTopHeirdActors()
+        theSummary.getTopHiredActors()
                 .forEach(System.out::println);
         System.out.println(" ------ ");
 

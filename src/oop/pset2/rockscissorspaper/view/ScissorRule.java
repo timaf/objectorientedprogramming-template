@@ -12,10 +12,10 @@ public class ScissorRule implements Rules {
                 System.out.println("No winner!");
                 break;
             case "Rock":
-                System.out.println("Computer wines");
+                System.out.println("Humen wines");
                 break;
             case "Paper":
-                System.out.println("Human  wines");
+                System.out.println("Computer  wines");
                 break;
         }
     }
