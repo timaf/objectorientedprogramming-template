@@ -1,4 +1,4 @@
-package oop.pset3.RockScissorsPaper_polymorphism.controller.model;
+package oop.pset2.RockScissorPaper_PolyMorphizm.model;
 
 
 import java.util.HashSet;

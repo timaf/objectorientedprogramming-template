@@ -1,6 +1,6 @@
-package oop.pset3.RockScissorsPaper_polymorphism.controller.model;
+package oop.pset2.RockScissorPaper_PolyMorphizm.model;
 
-import oop.pset3.RockScissorsPaper_polymorphism.controller.TheRockScissorsPaperGame;
+import oop.pset2.RockScissorPaper_PolyMorphizm.TheRockScissorsPaperGame;
 import java.util.Scanner;
 
 public class Rounds {
