@@ -14,7 +14,7 @@ public class StorageArea implements TravelStage {
         // if 30 minutes is not possible, the luggage won't be stored at all, which means that
         // no waiting time will be added at all
         if (interval.toMinutes() > 30) {
-            Duration secondDuration = luggage.getWaitingDuration().plus(interval.minusMinutes(30));
+            Duration secondDuration = luggage.getWaitingDuration().plus(interval.minusMinutes(40));
             luggage.setWaitingDuration(secondDuration);
             return luggage;
         }
